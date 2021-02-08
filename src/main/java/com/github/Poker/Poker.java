@@ -1,9 +1,6 @@
 package com.github.Poker;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Poker {
     public static void main(String[] args) {
@@ -20,9 +17,9 @@ public class Poker {
 
         //put all the index and cards into the HashMap--cards.
         //put all the index into ArrayList-- keys.
-        for (String color : colors) {
-            for (String number : numbers) {
-                cards.put(index, number + color);
+        for (String number : numbers) {
+            for (String color : colors) {
+                cards.put(index, color + number);
                 keys.add(index);
                 index++;
             }
@@ -63,8 +60,7 @@ public class Poker {
 
     public static void lookCards(String name, TreeSet<Integer> player, HashMap<Integer, String> hm) {
         System.out.print(name + ":  ");
-        for (int i : player) {
-
+        for(int i : player){
             System.out.print(hm.get(i) + " ");
         }
         System.out.println();
